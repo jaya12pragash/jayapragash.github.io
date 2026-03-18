@@ -15,9 +15,7 @@
   <meta name="author" content="Jayapragash Dakshnamurthy" />
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -33,23 +31,15 @@
       padding: 24px;
     }
 
-    .hero {
+    nav, .hero, .section {
       background: #ffffff;
-      padding: 32px;
       border-radius: 14px;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
-      margin-top: 24px;
     }
 
     nav {
-      background: #ffffff;
-      border-radius: 12px;
-      padding: 16px 20px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
       margin-top: 20px;
-      position: sticky;
-      top: 10px;
-      z-index: 10;
+      padding: 16px 20px;
     }
 
     nav a {
@@ -59,13 +49,21 @@
       margin-right: 18px;
     }
 
-    nav a:hover {
-      text-decoration: underline;
+    nav a:hover { text-decoration: underline; }
+
+    .hero {
+      margin-top: 22px;
+      padding: 32px;
+    }
+
+    .section {
+      margin-top: 22px;
+      padding: 28px;
     }
 
     h1 {
       margin-top: 0;
-      font-size: 2.4rem;
+      font-size: 2.3rem;
       color: #1c1c1c;
     }
 
@@ -75,17 +73,25 @@
     }
 
     .subtitle {
-      font-size: 1.15rem;
+      font-size: 1.12rem;
       color: #444;
       margin-bottom: 0;
     }
 
-    .section {
-      background: #ffffff;
-      padding: 28px;
-      border-radius: 14px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
-      margin-top: 22px;
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .tag {
+      background: #eaf3ff;
+      color: #0b66c3;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: bold;
     }
 
     .grid {
@@ -104,37 +110,27 @@
 
     .card h3 {
       margin-top: 0;
-      font-size: 1.1rem;
+      font-size: 1.08rem;
     }
 
-    .card p {
-      margin-bottom: 0;
-      color: #444;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    a {
-      color: #0b66c3;
-    }
-
-    .tag-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 14px;
-    }
-
-    .tag {
-      background: #eaf3ff;
-      color: #0b66c3;
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-size: 0.95rem;
+    .button {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: #0b66c3;
+      color: #fff;
+      text-decoration: none;
       font-weight: bold;
     }
+
+    .button:hover {
+      background: #094f97;
+    }
+
+    ul { padding-left: 20px; }
+
+    a { color: #0b66c3; }
 
     .footer {
       text-align: center;
@@ -144,10 +140,7 @@
     }
 
     @media (max-width: 640px) {
-      h1 {
-        font-size: 2rem;
-      }
-
+      h1 { font-size: 2rem; }
       nav a {
         display: inline-block;
         margin-bottom: 8px;
@@ -160,9 +153,8 @@
     <nav>
       <a href="#home">Home</a>
       <a href="#about">About</a>
-      <a href="#publications">Publications</a>
-      <a href="#blog">Blog</a>
-      <a href="#architecture">Architecture</a>
+      <a href="articles.html">Articles</a>
+      <a href="#publications">Profiles</a>
       <a href="#contact">Contact</a>
     </nav>
 
@@ -193,9 +185,37 @@
       </p>
       <p>
         Through technical writing and public knowledge sharing, I publish engineering
-        insights on architecture patterns, modernization strategies, and practical
-        software engineering challenges.
+        insights on modernization strategy, architecture patterns, production
+        reliability, and practical software engineering challenges.
       </p>
+    </section>
+
+    <section class="section">
+      <h2>Featured Writing</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>From Monolith to Microservices</h3>
+          <p>
+            Practical lessons from real system modernization and enterprise migration strategy.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Where AI Fails in Production Systems</h3>
+          <p>
+            Why working code is not enough when real systems face scale, context, and operational risk.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Why gRPC Is Becoming the Backbone of AI Infrastructure</h3>
+          <p>
+            How communication efficiency impacts latency, reliability, and throughput in distributed AI systems.
+          </p>
+        </div>
+      </div>
+
+      <a class="button" href="articles.html">View All Articles</a>
     </section>
 
     <section class="section" id="publications">
@@ -222,76 +242,6 @@
           </a>
         </li>
       </ul>
-    </section>
-
-    <section class="section" id="blog">
-      <h2>Featured Blog Topics</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Why Most Microservices Fail in Regulated Financial Systems</h3>
-          <p>
-            Practical lessons on service boundaries, compliance constraints,
-            observability, and reliability in real enterprise systems.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>AI-Assisted Engineering in Enterprise Platforms</h3>
-          <p>
-            How AI tools can accelerate delivery while engineers remain accountable
-            for quality, safety, and production outcomes.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Observability Strategies for Distributed Systems</h3>
-          <p>
-            A practical look at tracing, logging, metrics, and operational design
-            needed to support complex distributed architectures.
-          </p>
-        </div>
-      </div>
-      <p style="margin-top: 16px;">
-        More articles are available on my
-        <a href="https://dzone.com/users/5503293/jayapragashd.html" target="_blank">DZone</a>,
-        <a href="https://substack.com/@jayapragashdakshnamurthy" target="_blank">Substack</a>,
-        and
-        <a href="https://www.linkedin.com/in/jayapragashd/" target="_blank">LinkedIn</a>
-        profiles.
-      </p>
-    </section>
-
-    <section class="section" id="architecture">
-      <h2>Architecture & Research Focus</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Cloud-Native Platform Design</h3>
-          <p>
-            Designing scalable, resilient systems using modern cloud architecture,
-            service decomposition, and platform engineering practices.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Legacy Modernization</h3>
-          <p>
-            Transforming monolithic enterprise applications into maintainable,
-            observable, and scalable service-based platforms.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>AI-Driven Engineering Workflows</h3>
-          <p>
-            Applying AI-assisted development responsibly to improve engineering
-            productivity, design quality, and modernization outcomes.
-          </p>
-        </div>
-      </div>
-      <p style="margin-top: 16px;">
-        This section can later include architecture diagrams, system design writeups,
-        and engineering case studies.
-      </p>
     </section>
 
     <section class="section" id="contact">
